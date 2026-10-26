@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MasjidMapper flow prototype</title>
+  <meta name="description" content="Clickable flow prototype of the MasjidMapper Android app. Mock data only.">
+  <link rel="icon" href="assets/masjid.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,1..1000,0..100&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="phone">
+    <div class="screen" id="screen">
+      <div class="statusbar" aria-hidden="true"><span id="sb-time">2:17</span><span><span class="sym">signal_cellular_alt</span> <span class="sym">wifi</span> <span class="sym">battery_full</span></span></div>
+      <div id="app" style="flex:1;display:flex;flex-direction:column;min-height:0"></div>
+    </div>
+  </div>
+
+  <aside class="demo" aria-label="Demo controls">
+    <h1>Demo controls</h1>
+    <p>Not part of the app. Prayer times are fixed fixture days from spec/fixtures/prayer/days.json; everything else is mock data.</p>
+    <label>Demo day
+      <select id="d-day">
+        <option value="wed">Wed 14 Jan 2026 (home masjid iqamah)</option>
+        <option value="fri">Fri 9 Oct 2026 (jummah only)</option>
+      </select>
+    </label>
+    <label>Clock <span class="clock" id="d-clock"></span>
+      <input id="d-time" type="range" min="0" max="1439" step="1">
+    </label>
+    <div class="tog"><span>Signed in</span><input id="d-signed" type="checkbox"></div>
+    <div class="tog"><span>Home masjid set</span><input id="d-home" type="checkbox"></div>
+    <label>Theme
+      <select id="d-theme"><option value="">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+    </label>
+    <button class="btn tonal" id="d-reset">Reset prototype</button>
+  </aside>
+
+  <script src="js/fixtures.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/prayer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
